@@ -5,9 +5,9 @@ import "github.com/gofiber/fiber"
 func main() {
 	// setting
 	app := fiber.New(&fiber.Settings{
-		TemplateEngine: "amber",
+		TemplateEngine: "mustache",
 		TemplateFolder: "views",
-		TemplateExtension: ".amber",
+		TemplateExtension: ".tmpl",
 	})
 
 	// Group
