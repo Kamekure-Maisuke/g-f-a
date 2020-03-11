@@ -9,16 +9,20 @@ func main() {
 		TemplateFolder: "views",
 		TemplateExtension: ".amber",
 	})
+
+	// Group
+	apiGroup := app.Group("/api/v1")
+
 	// index
   app.Get("/", func(c *fiber.Ctx) {
 		data := fiber.Map{
-			"name": "john",
+			"name": "satou",
 			"age":  34,
 		}
 		c.Render("index",data)
   })
 	// param
-	app.Get("/api/v1/:id",func(c *fiber.Ctx) {
+	apiGroup.Get("/:id",func(c *fiber.Ctx) {
 		c.Send("id = " + c.Params("id"))
 	})
 
